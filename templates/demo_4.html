@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer-Registration Page</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+</style>
+<script>
+function validate()
+{
+  var uname=document.f.uname.value;
+  var pwd=document.f.pwd.value;
+  if(uname.length==0)
+    {
+    alert("Username Should Be Required");
+    document.f.uname.focus();
+    return false;
+    }
+  if(pwd.length==0)
+    {
+    alert("Password should be required");
+    document.f.pwd.focus();
+    return false;
+    }
+}
+</script>
+</head>
+<body bgcolor="lightblue">
+  <div style="padding-left:16px; text-align:center; margin-top:1%;">
+  <h2>Customer Registration</h2>
+</div>
+
+  <div class="topnav">
+  <a class="active" href="">Home</a>
+  <a href="{{url_for('About')}}">About</a>
+  <a href="{{url_for('demo_1')}}">Stock Manager(Login)</a>
+  <a href="{{url_for('demo_2')}}">Shop Owner(Login)</a>
+  <a href="{{url_for('demo_3')}}">Customer(Login)</a>
+  <a href="{{url_for('demo_4')}}">Customer(Register)</a>
+  </div>
+<center style="margin-top:5%">
+<form name="f" method="post" action="Register.jsp">
+<input type="text" name="fname" placeholder="Enter Full Name"><br><br>
+<h2 font-size=5em>Select Gender:</h2>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br><br>
+<input type="email" name="email" placeholder="Enter Mail ID"><br><br>
+<input type="number" name="uname" placeholder="Enter Mobile Number"><br><br>
+<input type="password" name="pwd" placeholder="Enter Password"><br><br>
+<input type="text" name="loc" placeholder="Enter Location"><br><br>
+<input type="submit"  placeholder="Register">
+</form>
+</center>
+
+</body>
+</html>
