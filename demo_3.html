@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer-Login Page</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: black;
+  color: white;
+}
+</style>
+<script>
+function validate()
+{
+	var uname=document.f.uname.value;
+	var pwd=document.f.pwd.value;
+	if(uname.length==0)
+		{
+		alert("Username Should Be Required");
+		document.f.uname.focus();
+		return false;
+		}
+	if(pwd.length==0)
+		{
+		alert("Password should be required");
+		document.f.pwd.focus();
+		return false;
+		}
+}
+</script>
+</head>
+<body bgcolor="lightblue">
+	<div style="padding-left:16px; text-align:center; margin-top:1%;">
+  <h2>Customer Login</h2>
+</div>
+
+	<div class="topnav">
+  <a class="active" href="">Home</a>
+  <a href="{{url_for('About')}}">About</a>
+  <a href="{{url_for('demo_1')}}">Stock Manager(Login)</a>
+  <a href="{{url_for('demo_2')}}">Shop Owner(Login)</a>
+  <a href="{{url_for('demo_3')}}">Customer(Login)</a>
+  <a href="{{url_for('demo_4')}}">Customer(Register)</a>
+  </div>
+<center style="margin-top:5%;">
+<form name="f" method="post" action="logincheck" onsubmit="return validate()">
+<input type="text" name="uname" placeholder="Enter Email/Mobile Number"><br><br>
+<input type="password" name="pwd" placeholder="Enter Password"><br><br>
+<input type="submit"  placeholder="Submit">
+</form>
+</center>
+
+</body>
+</html>
